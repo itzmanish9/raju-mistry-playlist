@@ -5,75 +5,348 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#263c5b">
 <title>राजू मिस्त्री प्लेलिस्ट</title>
-<link rel="stylesheet" href="style.css?v=6">
+
+<link rel="stylesheet" href="style.css?v=7">
 </head>
+
 <body>
+
 <main class="app">
-  <div class="bg"></div>
+
+  <!-- ANIMATED AMBIENT BACKGROUND -->
+  <div class="bg">
+
+    <svg
+      class="ambient-svg"
+      viewBox="0 0 1000 1800"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+
+      <defs>
+
+        <filter id="softGlow">
+          <feGaussianBlur stdDeviation="28"/>
+        </filter>
+
+        <linearGradient id="waveBlue" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#78bfff" stop-opacity=".34"/>
+          <stop offset="1" stop-color="#7d8cff" stop-opacity="0"/>
+        </linearGradient>
+
+        <linearGradient id="wavePink" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#d99cff" stop-opacity=".28"/>
+          <stop offset="1" stop-color="#ff6c99" stop-opacity="0"/>
+        </linearGradient>
+
+        <linearGradient id="waveRed" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ff7890" stop-opacity=".22"/>
+          <stop offset="1" stop-color="#ffb08d" stop-opacity="0"/>
+        </linearGradient>
+
+      </defs>
+
+
+      <!-- BLUE WAVE -->
+
+      <path
+        class="wave wave-blue"
+        d="
+          M-150 430
+          C120 180 300 300 500 470
+          C700 640 850 500 1150 260
+          L1150 720
+          C850 870 680 800 470 640
+          C250 470 80 500 -150 700
+          Z
+        "
+        fill="url(#waveBlue)"
+        filter="url(#softGlow)"
+      />
+
+
+      <!-- PURPLE / PINK WAVE -->
+
+      <path
+        class="wave wave-pink"
+        d="
+          M-180 820
+          C90 610 300 700 500 880
+          C690 1050 850 930 1180 690
+          L1180 1120
+          C850 1250 680 1210 470 1040
+          C250 870 80 930 -180 1090
+          Z
+        "
+        fill="url(#wavePink)"
+        filter="url(#softGlow)"
+      />
+
+
+      <!-- RED WAVE -->
+
+      <path
+        class="wave wave-red"
+        d="
+          M-180 1260
+          C100 1050 320 1180 520 1350
+          C720 1510 900 1400 1180 1190
+          L1180 1600
+          C900 1690 690 1660 480 1510
+          C250 1340 70 1420 -180 1530
+          Z
+        "
+        fill="url(#waveRed)"
+        filter="url(#softGlow)"
+      />
+
+    </svg>
+
+  </div>
+
+
+  <!-- HEADER -->
+
   <header class="top">
+
     <span id="clock">09:47 am</span>
-    <strong>राजू मिस्त्री प्लेलिस्ट</strong>
-    <button id="moreBtn" aria-label="More">•••</button>
+
+    <strong>
+      राजू मिस्त्री प्लेलिस्ट
+    </strong>
+
+    <button
+      id="moreBtn"
+      aria-label="More"
+    >
+      •••
+    </button>
+
   </header>
 
-  <section class="empty-stage" aria-hidden="true"></section>
+
+  <!-- EMPTY VISUAL AREA -->
+
+  <section
+    class="empty-stage"
+    aria-hidden="true">
+  </section>
+
+
+  <!-- PLAYER -->
 
   <section class="player">
+
     <div class="song-row">
-      <div class="cover" id="cover">♪</div>
-      <div class="meta">
-        <div class="title" id="songTitle">राजू मिस्त्री प्लेलिस्ट</div>
-        <div class="artist" id="artist">YouTube Music</div>
+
+      <div
+        class="cover"
+        id="cover">
+        ♪
       </div>
-      <button id="likeBtn" class="heart" aria-label="Favorite">♡</button>
+
+      <div class="meta">
+
+        <div
+          class="title"
+          id="songTitle">
+          राजू मिस्त्री प्लेलिस्ट
+        </div>
+
+        <div
+          class="artist"
+          id="artist">
+          YouTube Music
+        </div>
+
+      </div>
+
+      <button
+        id="likeBtn"
+        class="heart"
+        aria-label="Favorite">
+        ♡
+      </button>
+
     </div>
 
-    <input id="seek" type="range" min="0" max="100" value="0" aria-label="Song progress">
-    <div class="times"><span id="currentTime">0:00</span><span id="duration">--:--</span></div>
+
+    <!-- PROGRESS -->
+
+    <input
+      id="seek"
+      type="range"
+      min="0"
+      max="100"
+      value="0"
+      aria-label="Song progress"
+    >
+
+    <div class="times">
+
+      <span id="currentTime">
+        0:00
+      </span>
+
+      <span id="duration">
+        --:--
+      </span>
+
+    </div>
+
+
+    <!-- CONTROLS -->
 
     <div class="controls">
-      <button id="shuffleBtn" aria-label="Shuffle">⤨</button>
-      <button id="prevBtn" aria-label="Previous">⏮</button>
-      <button id="playBtn" class="play" aria-label="Play">▶</button>
-      <button id="nextBtn" aria-label="Next">⏭</button>
-      <button id="repeatBtn" aria-label="Repeat">↻</button>
+
+      <button
+        id="shuffleBtn"
+        aria-label="Shuffle">
+        ⤨
+      </button>
+
+      <button
+        id="prevBtn"
+        aria-label="Previous">
+        ⏮
+      </button>
+
+      <button
+        id="playBtn"
+        class="play"
+        aria-label="Play">
+        ▶
+      </button>
+
+      <button
+        id="nextBtn"
+        aria-label="Next">
+        ⏭
+      </button>
+
+      <button
+        id="repeatBtn"
+        aria-label="Repeat">
+        ↻
+      </button>
+
     </div>
 
-    <button id="timerBtn" class="timer">◷ &nbsp; Sleep Timer</button>
 
-    <div id="timerBox" class="timer-box">
-      <div class="timer-title">Sleep Timer</div>
-      <div class="timer-options">
-        <button data-min="15">15 min</button>
-        <button data-min="30">30 min</button>
-        <button data-min="45">45 min</button>
-        <button data-min="60">60 min</button>
-        <button data-min="0">Off</button>
+    <!-- SLEEP TIMER -->
+
+    <button
+      id="timerBtn"
+      class="timer">
+      ◷ &nbsp; Sleep Timer
+    </button>
+
+
+    <div
+      id="timerBox"
+      class="timer-box">
+
+      <div class="timer-title">
+        Sleep Timer
       </div>
-      <div id="timerStatus">Timer off</div>
+
+      <div class="timer-options">
+
+        <button data-min="15">
+          15 min
+        </button>
+
+        <button data-min="30">
+          30 min
+        </button>
+
+        <button data-min="45">
+          45 min
+        </button>
+
+        <button data-min="60">
+          60 min
+        </button>
+
+        <button data-min="0">
+          Off
+        </button>
+
+      </div>
+
+      <div id="timerStatus">
+        Timer off
+      </div>
+
     </div>
+
   </section>
+
+
+  <!-- FOOTER -->
 
   <footer>
-    <span>राजू मिस्त्री प्लेलिस्ट</span>
-    <button id="playlistBtn">☷ Playlist</button>
+
+    <span>
+      राजू मिस्त्री प्लेलिस्ट
+    </span>
+
+    <button id="playlistBtn">
+      ☷ Playlist
+    </button>
+
   </footer>
 
-  <section id="playlistSheet" class="playlist-sheet" aria-hidden="true">
+
+  <!-- PLAYLIST -->
+
+  <section
+    id="playlistSheet"
+    class="playlist-sheet"
+    aria-hidden="true">
+
     <div class="handle"></div>
+
     <div class="sheet-head">
+
       <div>
-        <strong>राजू मिस्त्री प्लेलिस्ट</strong>
-        <small id="playlistCount">Loading playlist…</small>
+
+        <strong>
+          राजू मिस्त्री प्लेलिस्ट
+        </strong>
+
+        <small id="playlistCount">
+          Loading playlist…
+        </small>
+
       </div>
-      <button id="closePlaylist" aria-label="Close">×</button>
+
+      <button
+        id="closePlaylist"
+        aria-label="Close">
+        ×
+      </button>
+
     </div>
-    <div id="playlistItems" class="playlist-items"></div>
+
+    <div
+      id="playlistItems"
+      class="playlist-items">
+    </div>
+
   </section>
 
+
+  <!-- YOUTUBE PLAYER -->
+
   <div id="ytPlayer"></div>
+
 </main>
+
+
 <script src="https://www.youtube.com/iframe_api"></script>
-<script src="script.js?v=5"></script>
+
+<script src="script.js?v=7"></script>
+
 </body>
 </html>

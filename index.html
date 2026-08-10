@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>राजू मिस्त्री प्लेलिस्ट</title>
+  <meta name="theme-color" content="#0b0b0f">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <div class="backdrop" id="backdrop"></div>
+
+    <header class="topbar">
+      <div class="clock" id="clock">--:--</div>
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>राजू मिस्त्री प्लेलिस्ट</span>
+      </div>
+      <button class="icon-btn" id="menuBtn" aria-label="Open menu">⋮</button>
+    </header>
+
+    <section class="hero">
+      <div class="art-wrap">
+        <img id="artwork" class="artwork" alt="Random anime artwork">
+        <div class="art-shine"></div>
+      </div>
+
+      <div class="track-info">
+        <div class="eyebrow">NOW PLAYING</div>
+        <h1 id="trackTitle">राजू मिस्त्री प्लेलिस्ट</h1>
+        <p id="trackArtist">YouTube Music playlist</p>
+      </div>
+
+      <div class="progress-area">
+        <input id="progress" type="range" min="0" max="100" value="0" aria-label="Song progress">
+        <div class="time-row">
+          <span id="currentTime">0:00</span>
+          <span id="duration">--:--</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="control small" id="shuffleBtn" aria-label="Shuffle">⤨</button>
+        <button class="control" id="prevBtn" aria-label="Previous">⏮</button>
+        <button class="play-btn" id="playBtn" aria-label="Play">▶</button>
+        <button class="control" id="nextBtn" aria-label="Next">⏭</button>
+        <button class="control small" id="repeatBtn" aria-label="Repeat">↻</button>
+      </div>
+
+      <div class="quick-actions">
+        <button id="likeBtn">♡ <span>Favorite</span></button>
+        <button id="queueBtn">☷ <span>Queue</span></button>
+        <button id="timerBtn">◷ <span>Stop Timer</span></button>
+      </div>
+
+      <div class="playlist-panel" id="playlistPanel">
+        <div class="panel-head">
+          <div>
+            <strong>Playlist</strong>
+            <span id="songCount">YouTube playlist</span>
+          </div>
+          <button class="text-btn" id="closePlaylist">Close</button>
+        </div>
+        <div id="playlistList" class="playlist-list">
+          <div class="empty">YouTube playlist will load here.</div>
+        </div>
+      </div>
+
+      <div class="timer-panel" id="timerPanel">
+        <div class="panel-head">
+          <strong>Stop Timer</strong>
+          <button class="text-btn" id="closeTimer">Close</button>
+        </div>
+        <div class="timer-options">
+          <button data-min="15">15 min</button>
+          <button data-min="30">30 min</button>
+          <button data-min="45">45 min</button>
+          <button data-min="60">60 min</button>
+          <button data-min="0">Off</button>
+        </div>
+        <p id="timerStatus">Timer off</p>
+      </div>
+    </section>
+
+    <footer>
+      <button id="playlistBtn">☷ Playlist</button>
+      <span>Made for music lovers</span>
+      <button id="searchBtn">⌕ Search</button>
+    </footer>
+  </main>
+
+  <div id="ytPlayer" aria-hidden="true"></div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#29263b">
+<title>राजू मिस्त्री प्लेलिस्ट</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <div class="bg"></div>
+  <header>
+    <span id="clock">09:47</span>
+    <strong>राजू मिस्त्री प्लेलिस्ट</strong>
+    <button id="menu" aria-label="menu">•••</button>
+  </header>
+
+  <section class="visual">
+    <div class="soft-orb orb1"></div>
+    <div class="soft-orb orb2"></div>
+    <div class="center-mark">♪</div>
+  </section>
+
+  <section class="player">
+    <div class="song">
+      <div class="cover">♪</div>
+      <div class="meta">
+        <div id="title">राजू मिस्त्री प्लेलिस्ट</div>
+        <small id="artist">YouTube Music</small>
+      </div>
+      <button id="like">♡</button>
+    </div>
+
+    <input id="seek" type="range" min="0" max="100" value="0">
+    <div class="times"><span id="cur">0:00</span><span id="dur">--:--</span></div>
+
+    <div class="controls">
+      <button id="shuffle">⤨</button>
+      <button id="prev">⏮</button>
+      <button id="play" class="play">▶</button>
+      <button id="next">⏭</button>
+      <button id="repeat">↻</button>
+    </div>
+
+    <button id="timer" class="timer">◷ &nbsp; Sleep Timer</button>
+
+    <div id="timerBox" class="timer-box">
+      <div>Sleep Timer</div>
+      <div class="timer-options">
+        <button data-min="15">15m</button>
+        <button data-min="30">30m</button>
+        <button data-min="45">45m</button>
+        <button data-min="60">60m</button>
+        <button data-min="0">Off</button>
+      </div>
+      <small id="timerStatus">Timer off</small>
+    </div>
+  </section>
+
+  <footer><span>राजू मिस्त्री प्लेलिस्ट</span><button id="playlist">☷ Playlist</button></footer>
+  <div id="yt"></div>
+</main>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="script.js"></script>
+</body>
+</html>

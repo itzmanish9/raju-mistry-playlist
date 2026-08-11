@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#263c5b">
+<title>राजू मिस्त्री प्लेलिस्ट</title>
+<link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+<main class="app">
+  <div class="bg"></div>
+  <div class="made-by">Made with ❤️ by Manish</div>
+  <header class="top">
+    <span id="clock">09:47 am</span>
+    <strong>राजू मिस्त्री प्लेलिस्ट</strong>
+    <button id="moreBtn" aria-label="More">•••</button>
+  </header>
+
+  <section class="empty-stage" aria-hidden="true"></section>
+
+  <section class="player">
+    <div class="song-row">
+      <div class="cover" id="cover">♪</div>
+      <div class="meta">
+        <div class="title" id="songTitle">राजू मिस्त्री प्लेलिस्ट</div>
+        <div class="artist" id="artist">YouTube Music</div>
+      </div>
+      <button id="likeBtn" class="heart" aria-label="Favorite">♡</button>
+    </div>
+
+    <input id="seek" type="range" min="0" max="100" value="0" aria-label="Song progress">
+    <div class="times"><span id="currentTime">0:00</span><span id="duration">--:--</span></div>
+
+    <div class="controls">
+      <button id="shuffleBtn" aria-label="Shuffle">⤨</button>
+      <button id="prevBtn" aria-label="Previous">⏮</button>
+      <button id="playBtn" class="play" aria-label="Play">▶</button>
+      <button id="nextBtn" aria-label="Next">⏭</button>
+      <button id="repeatBtn" aria-label="Repeat">↻</button>
+    </div>
+
+    <button id="timerBtn" class="timer">◷ &nbsp; Sleep Timer</button>
+
+    <div id="timerBox" class="timer-box">
+      <div class="timer-title">Sleep Timer</div>
+      <div class="timer-options">
+        <button data-min="15">15 min</button>
+        <button data-min="30">30 min</button>
+        <button data-min="45">45 min</button>
+        <button data-min="60">60 min</button>
+        <button data-min="0">Off</button>
+      </div>
+      <div id="timerStatus">Timer off</div>
+    </div>
+  </section>
+
+  <footer>
+    <span>राजू मिस्त्री प्लेलिस्ट</span>
+    <button id="playlistBtn">☷ Playlist</button>
+  </footer>
+
+  <section id="playlistSheet" class="playlist-sheet" aria-hidden="true">
+    <div class="handle"></div>
+    <div class="sheet-head">
+      <div>
+        <strong>राजू मिस्त्री प्लेलिस्ट</strong>
+        <small id="playlistCount">Loading playlist…</small>
+      </div>
+      <button id="closePlaylist" aria-label="Close">×</button>
+    </div>
+    <div id="playlistItems" class="playlist-items"></div>
+  </section>
+
+  <div id="ytPlayer"></div>
+</main>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="script.js?v=8"></script>
+</body>
+</html>
